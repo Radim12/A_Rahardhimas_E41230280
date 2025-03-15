@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pengalaman_kerja', function (Blueprint $table) {
-            $table->bigInteger('id');
+            $table->id(); // Ini akan membuat kolom id sebagai primary key dan auto-increment
             $table->string('nama');
             $table->string('jabatan');
-            $table->year('tahun_masuk');
-            $table->year('tahun_keluar');
+            $table->integer('tahun_masuk'); // Menggunakan integer untuk tahun
+            $table->integer('tahun_keluar'); // Menggunakan integer untuk tahun
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('pengalaman_kerja');
     }
 };

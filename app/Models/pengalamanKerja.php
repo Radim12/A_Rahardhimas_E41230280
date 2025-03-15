@@ -2,13 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class pengalamanKerja extends Model
+class PengalamanKerja extends Model
 {
-    protected $table = "pengalaman_kerja";
-    protected $primaryKey= 'id';
+    use HasFactory;
+
+    // Tentukan nama tabel secara manual
+    protected $table = 'pengalaman_kerja';
+
     protected $fillable = [
-        'nama', 'jabatan', 'tahun_masuk', 'tahun_keluar',
+        'nama', 'jabatan', 'tahun_masuk', 'tahun_keluar'
     ];
 }
